@@ -55,7 +55,8 @@ jobs:
         password: ${{ secrets.PASSWORD }} # 仓库密码
         port: ${{ secrets.PORT }} # 22
         script: |
-          export PATH=/root/node-v16.15.0-linux-x64/bin:$PATH
+          echo 'export PATH=/root/node-v16.15.0-linux-x64/bin:$PATH' >> /etc/profile
+          source /etc/profile
           cd /root/realworld-nuxtjs
           wget https://github.com/lh0070/realworld-nuxtjs/releases/latest/download/release.tgz -O release.tgz
           tar zxvf release.tgz
