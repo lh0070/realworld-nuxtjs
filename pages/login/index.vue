@@ -12,9 +12,9 @@
           </p>
 
           <ul class="error-messages">
-            <!-- <template v-for="(messages, field) in errors"> -->
-              <li v-for="(messages, field) in errors" :key="field">{{ field }} {{ messages }}</li>
-            <!-- </template> -->
+            <template v-for="(messages, field) in errors">
+              <li v-for="(message, index) in messages" :key="index">{{ field }} {{ message }}</li>
+            </template>
           </ul>
 
           <form @submit.prevent="onSubmit">
